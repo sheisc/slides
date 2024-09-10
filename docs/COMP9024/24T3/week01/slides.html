@@ -815,9 +815,9 @@ if (expression1) {
 Relational and logical operators
 <p><table border='0' cellpadding='6'>
 <tr valign="top"><td><nobr><large><code>a > b</code></large></td><td></td><td><large><code>a</code></large> greater than <large><code>b</code></large></td></tr>
-<tr valign="top"><td><nobr><large><code>a >= b</code></large></td><td></td><td><large><code>a</code></large> greater than or equal <large><code>b</code></large></td></tr>
+<tr valign="top"><td><nobr><large><code>a >= b</code></large></td><td></td><td><large><code>a</code></large> greater than or equal to <large><code>b</code></large></td></tr>
 <tr valign="top"><td><nobr><large><code>a < b</code></large></td><td></td><td><large><code>a</code></large> less than <large><code>b</code></large></td></tr>
-<tr valign="top"><td><nobr><large><code>a <= b</code></large></td><td></td><td><large><code>a</code></large> less than or equal <large><code>b</code></large></td></tr>
+<tr valign="top"><td><nobr><large><code>a <= b</code></large></td><td></td><td><large><code>a</code></large> less than or equal to <large><code>b</code></large></td></tr>
 <tr valign="top"><td><nobr><large><code>a == b</code></large></td><td></td><td><large><code>a</code></large> equal to <large><code>b</code></large></td></tr>
 <tr valign="top"><td><nobr><large><code>a != b</code></large></td><td></td><td><large><code>a</code></large> not equal to <large><code>b</code></large></td></tr>
 <tr valign="top"><td><nobr><large><code>a <font color="#CC0000">&&</font> b</code></large></td><td></td><td><large><code>a</code></large> logical <font color="#CC0000">and</font> <large><code>b</code></large></td></tr>
@@ -913,6 +913,13 @@ Functions have the form
     return &hellip;;
 }
 </pre><p>
+<p><pre>
+int square(int n) {
+   int s;
+   s = n * n;
+   return s;
+}
+</pre><p>
 <ul>
 <li>if <large><code><i>return_type</i></code></large> is <large><font color="#008800"><b><code>void</code></b></font></large> then the function does not return a value
 <li>if <large><code><i>parameters</i></code></large> is <large><font color="#008800"><b><code>void</code></b></font></large> then the function has no arguments
@@ -976,7 +983,7 @@ return;
 <p>
 <ul>
 <li> In C each variable must have a type
-<li> C has the following generic data types:
+<li> C has the following data types:
 <p>
 <div class='center'>
 <table><tr><td><large><font color="#008800"><b><code>char</code></b></font></large></td><td>&nbsp;&nbsp;&nbsp;</td><td>character</td><td>&nbsp;&nbsp;&nbsp;</td><td><large><code>'A'</code></large>, <large><code>'e'</code></large>, <large><code>'#'</code></large>, &hellip;</td></tr>
@@ -1008,7 +1015,7 @@ Families of aggregate data types:
 </ul>
 <li> heterogeneous &hellip; elements may combine different base types
 <ul>
-<li> structures (e.g. <large><code>struct student { char name[30]; int zID; }</code></large>)
+<li> structures (e.g. <large><code>struct student { char name[32]; int zID; }</code></large>)
 </ul>
 </ul>
 </DIV>
