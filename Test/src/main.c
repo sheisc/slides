@@ -55,7 +55,7 @@ static void quick_sort(struct pair pairs[], long left, long right) {
     else
         return 0
  */
-int find_in_one_list(struct pair pairs[], long i, long j) {
+static int find_in_one_list(struct pair pairs[], long i, long j) {
     while(i != -1) {
         if (is_conflict(pairs + j, pairs + i)) {
             return 0;
@@ -77,7 +77,7 @@ int find_in_one_list(struct pair pairs[], long i, long j) {
     pairs[0] ... pairs[end] have been allocated.
     We try to find a slot for pair[j].
  */
-int find_a_slot(struct pair pairs[], long end, long j, long *pNum) {
+static int find_a_slot(struct pair pairs[], long end, long j, long *pNum) {
     for (long i = 0; i <= end; i++) {
         if (find_in_one_list(pairs, i, j)) {
             return 1;
@@ -85,18 +85,6 @@ int find_a_slot(struct pair pairs[], long end, long j, long *pNum) {
     }
     return 0;
 }
-
-
-long get_min_rooms(struct pair pairs[], long n) {
-    long rooms = 1;
-    for (long i = 1; i < n; i++) {
-        if (!find_a_slot(pairs, i - 1, i, &rooms)) {
-            rooms++;            
-        }
-    }
-    return rooms;
-}
-
 
 static void print_one_list(struct pair pairs[], long i) {
     while (i != -1) {
@@ -111,7 +99,7 @@ static void print_one_list(struct pair pairs[], long i) {
     printf("\n");
 }
 
-void print_pairs(struct pair pairs[], long n, const char *info) {
+static void print_pairs(struct pair pairs[], long n, const char *info) {
     printf("\n----------------- %s(): %s ----------------\n", __FUNCTION__, info);
     for (long i = 0; i < n; i++) {
         pairs[i].visited = 0;
@@ -122,6 +110,16 @@ void print_pairs(struct pair pairs[], long n, const char *info) {
         }
     }
     printf("\n");
+}
+
+long get_min_rooms(struct pair pairs[], long n) {
+    long rooms = 1;
+    for (long i = 1; i < n; i++) {
+        if (!find_a_slot(pairs, i - 1, i, &rooms)) {
+            rooms++;            
+        }
+    }
+    return rooms;
 }
 
 int main(void) {
