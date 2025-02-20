@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <assert.h>
 
+// TBD: a container like a vector needed
 struct rooms {
     long *meeting_ids;  // meeting_ids[i] is the head of a list, where is the room id
     long count;         // number of rooms needed; each room has a list of meetings
