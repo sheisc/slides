@@ -4,7 +4,7 @@
 
 // TBD: a container like a vector needed
 struct rooms {
-    long *meeting_ids;  // meeting_ids[i] is the head of a list, where is the room id
+    long *meeting_ids;  // meeting_ids[i] is the head of a list, where i is the room id
     long count;         // number of rooms needed; each room has a list of meetings
     long n;             // n meetings in all, i.e., the number of meetings
 };
