@@ -101,19 +101,11 @@ static void quick_sort(struct meeting meetings[], long left, long right) {
     else
         return 0
  */
-static int find_in_one_room(struct rooms *rs, struct meeting meetings[], long room_id, long new_mid) {
-    long cur_mid = rs->meeting_ids[room_id];
-    if (is_conflict(meetings + cur_mid, meetings + new_mid)) {
-        return 0;
-    } else {
-        update_one_room(rs, room_id, meetings, new_mid);
-        return 1;
-    }
-}
-
 static int find_a_slot(struct rooms *rs, struct meeting meetings[], long new_mid) {
     for (long room_id = 0; room_id < rs->count; room_id++) {
-        if (find_in_one_room(rs, meetings, room_id, new_mid)) {
+        long cur_mid = rs->meeting_ids[room_id];
+        if (!is_conflict(meetings + cur_mid, meetings + new_mid)) {
+            update_one_room(rs, room_id, meetings, new_mid);
             return 1;
         }
     }    
