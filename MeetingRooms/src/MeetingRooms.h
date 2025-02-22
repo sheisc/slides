@@ -4,8 +4,9 @@
 #include <iostream>
 
 struct Meeting {
-    long from;
-    long to;    
+    long from;      // start time of a meeting
+    long to;        // end time of a meeting
+    
     Meeting(long from, long to): from(from), to(to) {
         //std::cout << this << ": Meeting()" << std::endl;
     }    
@@ -16,9 +17,11 @@ struct Meeting {
 
 bool CompareMeeting(const Meeting *m1, const Meeting *m2);
 
-class MeetingRooms {  
-    std::vector<std::vector<const Meeting *> *> rooms;
-    std::vector<const Meeting *> meetings;
+class MeetingRooms { 
+    // each room has a list of meetings contained in a vector
+    std::vector<std::vector<const Meeting *> *> rooms;  
+    // all the meetings to be scheduled
+    std::vector<const Meeting *> meetings;              
 
     void AllocateOneRoom(const Meeting *m);
     bool IsConflict(const Meeting *m1, const Meeting *m2);
