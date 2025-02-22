@@ -6,7 +6,7 @@
 struct Meeting {
     long from;      // start time of a meeting
     long to;        // end time of a meeting
-    
+
     Meeting(long from, long to): from(from), to(to) {
         //std::cout << this << ": Meeting()" << std::endl;
     }    
@@ -27,6 +27,8 @@ class MeetingRooms {
     bool IsConflict(const Meeting *m1, const Meeting *m2);
     bool FindSlot(const Meeting *m);
 
+    MeetingRooms(const MeetingRooms &) = delete;
+    MeetingRooms & operator= (const MeetingRooms &) = delete;
 public:
     MeetingRooms(long timeSlots[][2], long n) { 
         for (long i = 0; i < n; i++) {
