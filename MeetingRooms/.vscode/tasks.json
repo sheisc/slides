@@ -4,7 +4,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "CppLeetCode: make",
+            "label": "MeetingRooms: make",
             "type": "shell",
             "command": "make",
             "problemMatcher": [],
@@ -14,7 +14,7 @@
             }
         },
         {
-            "label": "CppLeetCode: make clean",
+            "label": "MeetingRooms: make clean",
             "type": "shell",
             "command": "make clean",
             "problemMatcher": [],
