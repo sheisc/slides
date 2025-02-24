@@ -2,7 +2,7 @@
 
 It is based on std::list and std::unordered_map in C++.
 
-LfuCache can also be implemented in C ([LfuCache_In_C](https://github.com/sheisc/COMP9024/tree/main/C/LfuCache)), without relying on any C++ containers.
+LfuCache can also be implemented in C ([LfuCache_In_C](../LfuCacheInC/README.md)), without relying on any C++ containers.
 
 ## How to run
 
