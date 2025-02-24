@@ -59,8 +59,8 @@ static void PrintArr(long arr[], long n) {
         return i, where arr[i] is the least element, satisfying compare(arr[i], pivot)
  */
 long partition(long arr[], long left, long right, CompareFunc compare, long pivot) {
-    if (left >= right) {
-        return left;
+    if (left > right) {
+        return -1;
     }
 
     long pos = get_least_elem_pos(arr, left, right, compare, pivot);
